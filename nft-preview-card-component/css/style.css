@@ -1,0 +1,162 @@
+/* GLOBAL */
+:root {
+  --border-radius-lg: 1rem;
+  --border-radius-sm: 0.5rem;
+
+  --fnt-family-primary: "Outfit", sans-serif;
+  --fnt-weight-lt: 300;
+  --fnt-weight-rg: 400;
+  --fnt-weight-md: 600;
+
+  --fnt-size-title: 1.375rem;
+  --fnt-size-body: 1rem;
+  --fnt-size-small: 0.9375rem;
+
+  --clr-text-body: hsl(215, 51%, 70%);
+  --clr-text-accent: hsl(178, 100%, 50%);
+  --clr-text-title: hsl(0, 0%, 100%);
+  --clr-bg-dark: hsl(217, 54%, 11%);
+  --clr-bg-medium: hsl(216, 50%, 16%);
+  --clr-overlay-accent: hsla(178, 100%, 50%, 50%);
+  --clr-line: hsl(215, 32%, 27%);
+}
+
+body {
+  font-family: var(--fnt-family-primary);
+  font-weight: var(--fnt-weight-lt);
+  font-size: var(--fnt-size-body);
+  background-color: var(--clr-bg-dark);
+  color: var(--clr-text-body);
+}
+
+h2 {
+  font-size: var(--fnt-size-title);
+  font-weight: var(--fnt-weight-md);
+  color: var(--clr-text-title);
+}
+
+a {
+  color: var(--clr-text-title);
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+a:hover {
+  color: var(--clr-text-accent);
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* COMPOSITION */
+/* for component display only */
+.component-display {
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+/* UTILITY */
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.repel {
+  justify-content: space-between;
+}
+
+/* BLOCK */
+.nft-preview {
+  max-width: 21.875rem;
+  padding: 1.5rem;
+  background-color: var(--clr-bg-medium);
+  border-radius: var(--border-radius-lg);
+}
+
+.nft-preview__media {
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.nft-preview__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: var(--clr-overlay-accent) url(/images/icon-view.svg) no-repeat
+    center;
+  transition: opacity 200ms ease;
+}
+
+.nft-preview__media:hover::after {
+  opacity: 1;
+}
+
+.nft-preview__description {
+  --flow-space: 0.7em;
+}
+
+.nft-preview__info {
+  font-size: var(--fnt-size-small);
+  font-weight: var(--fnt-weight-lt);
+  align-items: baseline;
+}
+
+.nft-preview__info li::before {
+  position: relative;
+  margin-right: 0.5em;
+  top: 3px;
+}
+
+.nft-preview__footer {
+  font-size: var(--fnt-size-small);
+  padding-top: 1em;
+  border-top: 1px solid var(--clr-line);
+  gap: 1em;
+}
+
+.nft-preview__footer img {
+  width: 2.1rem;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.attribution {
+  font-size: var(--fnt-size-small);
+}
+
+/* EXCEPTION */
+.nft-preview__info li[data-type="price"] {
+  color: var(--clr-text-accent);
+  font-weight: var(--fnt-weight-rg);
+}
+.nft-preview__info li[data-type="price"]::before {
+  content: url(/images/icon-ethereum.svg);
+}
+.nft-preview__info li[data-type="time-remaining"]::before {
+  content: url(/images/icon-clock.svg);
+}
+
+@media (min-width: 25em) {
+  :root {
+    --fnt-size-body: 1.125rem;
+    --fnt-size-small: 1rem;
+  }
+  .nft-preview__footer {
+    --flow-space: 1.3em;
+    padding-bottom: 0.5rem;
+  }
+  .nft-preview__info {
+    --flow-space: 1.3em;
+  }
+}
