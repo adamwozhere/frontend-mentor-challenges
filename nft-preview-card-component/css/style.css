@@ -141,10 +141,10 @@ ul {
   font-weight: var(--fnt-weight-rg);
 }
 .nft-preview__info li[data-type="price"]::before {
-  content: url(/images/icon-ethereum.svg);
+  content: url(../images/icon-ethereum.svg);
 }
 .nft-preview__info li[data-type="time-remaining"]::before {
-  content: url(/images/icon-clock.svg);
+  content: url(../images/icon-clock.svg);
 }
 
 @media (min-width: 25em) {
