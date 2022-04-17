@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/adamwozhere/frontend-mentor-challenges/tree/main/nft-preview-card-component](https://github.com/adamwozhere/frontend-mentor-challenges/tree/main/nft-preview-card-component)
-- Live Site URL: [https://adamwozhere.github.io/frontend-mentor-challenges/nft-preview-card-component/)](https://adamwozhere.github.io/frontend-mentor-challenges/nft-preview-card-component/)
+- Live Site URL: [https://adamwozhere.github.io/frontend-mentor-challenges/nft-preview-card-component/](https://adamwozhere.github.io/frontend-mentor-challenges/nft-preview-card-component/)
 
 ## My process
 
