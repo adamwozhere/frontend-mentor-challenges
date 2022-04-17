@@ -93,7 +93,7 @@ ul {
   position: absolute;
   inset: 0;
   opacity: 0;
-  background: var(--clr-overlay-accent) url(images/icon-view.svg) no-repeat
+  background: var(--clr-overlay-accent) url(../images/icon-view.svg) no-repeat
     center;
   transition: opacity 200ms ease;
 }
