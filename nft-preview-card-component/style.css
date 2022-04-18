@@ -52,9 +52,10 @@ ul {
 /* for component display only */
 .component-display {
   display: grid;
-  grid-template-rows: 1fr min-content;
   place-items: center;
+  grid-template-rows: 1fr;
   padding: 1.5rem;
+  padding-top: 4rem;
 }
 
 /* UTILITY */
@@ -75,6 +76,7 @@ ul {
 
 /* BLOCK */
 .nft-preview {
+  place-self: center;
   max-width: 21.875rem;
   padding: 1.5rem;
   background-color: var(--clr-bg-medium);
@@ -93,7 +95,7 @@ ul {
   position: absolute;
   inset: 0;
   opacity: 0;
-  background: var(--clr-overlay-accent) url(../images/icon-view.svg) no-repeat
+  background: var(--clr-overlay-accent) url(images/icon-view.svg) no-repeat
     center;
   transition: opacity 200ms ease;
 }
@@ -133,6 +135,7 @@ ul {
 }
 
 .attribution {
+  padding-top: 1rem;
   font-size: var(--fnt-size-small);
 }
 
@@ -142,10 +145,10 @@ ul {
   font-weight: var(--fnt-weight-rg);
 }
 .nft-preview__info li[data-type="price"]::before {
-  content: url(../images/icon-ethereum.svg);
+  content: url(images/icon-ethereum.svg);
 }
 .nft-preview__info li[data-type="time-remaining"]::before {
-  content: url(../images/icon-clock.svg);
+  content: url(images/icon-clock.svg);
 }
 
 @media (min-width: 25em) {
