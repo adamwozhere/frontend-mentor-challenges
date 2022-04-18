@@ -1,0 +1,108 @@
+/* minimal reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body, h2, p {
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* GLOBAL */
+:root {
+    --fnt-family-primary: 'Outfit', sans-serif;
+
+    --fnt-weight-rg: 400;
+    --fnt-weight-bd: 700;
+
+    --fnt-size-rg: 0.9375rem;
+    --font-size-md: 1.40625rem;
+
+    --clr-bg-md: hsl(212, 45%, 89%);
+    --clr-bg-lt: hsl(0, 0%, 100%);
+    --clr-text-dark: hsl(218, 44%, 22%);
+    --clr-text-body: hsl(220, 15%, 55%);
+    --clr-shadow: hsla(220, 15%, 55%, 10%);
+
+    --border-radius-lg: 1.5rem;
+    --border-radius-sm: 0.6rem;
+}
+
+body {
+    font-family: var(--fnt-family-primary);
+    font-size: var(--fnt-size-rg);
+    font-weight: var(--fnt-weight-rg);
+    color: var(--clr-text-body);
+    background-color: var(--clr-bg-md);
+    line-height: 1.3;
+}
+
+/* COMPOSITION */
+/* for component display only */
+.component-display {
+    display: grid;
+    grid-template-rows: 1fr;
+    place-items: center;
+    padding: 1.75rem;
+    padding-top: 3.725rem;
+}
+
+/* UTILITY */
+.flow > * + * {
+    margin-top: var(--flow-space, 1em);
+}
+
+/* BLOCK */
+.qr-code {
+    background-color: var(--clr-bg-lt);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    max-width: 20rem;
+    padding: 1rem;
+    padding-bottom: 2.5rem;
+    text-align: center;
+    box-shadow: 0 30px 30px 0 var(--clr-shadow);
+}
+
+.qr-code img {
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+}
+
+.qr-code h2 {
+    --flow-space: 1.5rem;
+    font-size: var(--font-size-md);
+    color: var(--clr-text-dark);
+    line-height: 1.25;
+}
+
+.qr-code p {
+    max-width: 25ch;
+    margin-inline: auto;
+}
+
+/* footer */
+.attribution {
+    padding-top: 1rem;
+    font-size: 0.75rem;
+    color: var(--clr-text-body);
+}
+.attribution a {
+    text-decoration: none;
+    color: var(--clr-text-dark);
+}
+.attribution a:hover {
+    text-decoration: underline;
+}
+
+/* EXCEPTION */
