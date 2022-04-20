@@ -1,0 +1,213 @@
+/* minimal reset */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+    
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* GLOBAL */
+:root {
+    --fnt-family-primary: 'Red Hat Display', sans-serif;
+    --fnt-weight-bd: 900;
+    --fnt-weight-md: 700;
+    --fnt-weight-rg: 500;
+
+    --fnt-size-lg: 1.375rem;
+    --fnt-size-rg: 0.9375rem;
+    --fnt-size-md: 0.9375rem;
+    --fnt-size-sm: 0.875rem;
+    --fnt-size-xs: 0.8125rem;
+    
+    --clr-bg-pale: hsl(225, 100%, 94%);
+    --clr-bg-light: hsl(225, 100%, 98%);
+    --clr-bg-white: hsl(0, 0%, 100%);
+    --clr-text-body: hsl(224, 23%, 55%);
+    --clr-text-title: hsl(223, 47%, 23%);
+    --clr-primary-bright: hsl(245, 75%, 52%);
+    --clr-primary-shadow: hsla(245, 75%, 52%, 7%);
+    --clr-primary-shadow-button: hsla(245, 75%, 52%, 18%);
+}
+
+body {
+    font-family: var(--fnt-family-primary);
+    font-size: var(--fnt-size-rg);
+    font-weight: var(--fnt-weight-rg);
+    line-height: 1.625;
+    background-color: var(--clr-bg-pale);
+    color: var(--clr-text-body);
+}
+
+h2 {
+    line-height: 1.125;
+    font-size: var(--fnt-size-lg);
+    font-weight: var(--fnt-weight-bd);
+    color: var(--clr-text-title);
+}
+
+
+/* COMPOSITION */
+/* for component display only */
+.component-display {
+    display: grid;
+    grid-template-rows: 1fr;
+    place-items: center;
+    padding: 1.5rem;
+    padding-top: 2.21875rem;
+}
+
+
+/* UTILITY */
+.flow > :where(:not(:first-child)) {
+    margin-top: var(--flow-space, 1.5rem);
+}
+
+
+
+/* BLOCK */
+.order-summary {
+    max-width: 28.125rem;
+    background-color: var(--clr-bg-white);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 2.5rem 1.25rem 0 var(--clr-primary-shadow);
+}
+
+.order-summary__content {
+    padding: 1.5rem;
+    padding-top: 2.2rem;
+    max-width: 25.125rem;
+    margin-inline: auto;
+}
+
+.order-summary__content p {
+    max-width: 25ch;
+    margin-inline: auto;
+    --flow-space: 1.25rem;
+}
+
+.plan {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: start;
+    gap: 1.4em;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    background-color: var(--clr-bg-light);
+    font-size: var(--fnt-size-rg);
+}
+
+.plan__type {
+    display: block;
+    font-weight: var(--fnt-weight-bd);
+    color: var(--clr-text-title);
+}
+
+.plan__change {
+    font-size: var(--fnt-size-xs);
+    font-weight: var(--fnt-weight-bd);
+    color: var(--clr-primary-bright);
+    margin-inline-start: auto;
+}
+.plan__change:hover,
+.plan__change:focus {
+    text-decoration: none;
+    opacity: 0.75;
+}
+
+
+.button {
+    display: block;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-family: inherit;
+    font-size: var(--fnt-size-md);
+    font-weight: var(--fnt-weight-md);
+    color: var(--clr-bg-white);
+    background-color: var(--clr-primary-bright);
+    padding: 1em 2em;
+    border-radius: 0.75em;
+    box-shadow: 0 1.25rem 1.25rem 0 var(--clr-primary-shadow-button);
+}
+
+.button:hover,
+.button:focus {
+    opacity: 0.75;
+}
+
+
+.attribution {
+    padding-top: 1rem;
+    font-size: 0.75rem;
+}
+.attribution a {
+    color: var(--clr-text-title);
+}
+.attribution a:hover {
+    text-decoration: none;
+}
+
+
+/* EXCEPTION */
+.button[data-type="ghost"] {
+    --flow-space: 0.75rem;
+    background: transparent;
+    color: var(--clr-text-body);
+    font-weight: var(--fnt-weight-bd);
+    padding: 0.75em;
+    box-shadow: none;
+}
+.button[data-type="ghost"]:hover,
+.button[data-type="ghost"]:focus {
+    opacity: 1;
+    color: var(--clr-text-title);
+}
+
+@media (min-width: 28.125em) {
+    :root {
+        --fnt-size-lg: 1.75rem;
+        --fnt-size-rg: 1rem;
+        --fnt-size-xs: 0.875rem;
+        --flow-space: 1.25em;
+    }
+    .order-summary__content {
+        padding-top: 3rem;
+        padding-bottom: 2.25rem;
+    }
+    .order-summary__content p {
+        max-width: 30ch;
+    }
+    .plan {
+        padding: 1.5rem;
+        gap: 1.2em;
+    }
+    .button {
+        --flow-space: 2em;
+    }
+    .button[data-type="ghost"] {
+        --flow-space: 1.25em;
+        padding: 0.85em;
+    }
+}
