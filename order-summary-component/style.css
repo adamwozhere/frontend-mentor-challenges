@@ -45,6 +45,7 @@ img {
     --clr-primary-bright: hsl(245, 75%, 52%);
     --clr-primary-shadow: hsla(245, 75%, 52%, 7%);
     --clr-primary-shadow-button: hsla(245, 75%, 52%, 18%);
+    --clr-bg-graphic: hsl(224, 100%, 92%);
 }
 
 body {
@@ -54,6 +55,16 @@ body {
     line-height: 1.625;
     background-color: var(--clr-bg-pale);
     color: var(--clr-text-body);
+
+    
+    /* place SVG in center.  Add gradient; blue top, transparent bottom.  Move background up by half the height of the SVG (brings bottom edge of SVG to center.) add background pale blue. */
+    background:
+        url(images/pattern-background-desktop.svg) repeat-x center,
+        linear-gradient(to top, transparent 0% 50%, var(--clr-bg-graphic) 50% 100%) no-repeat,
+        var(--clr-bg-pale);
+
+    background-position: center  calc(50% - 436px / 2);
+    background-attachment: fixed;
 }
 
 h2 {
@@ -71,7 +82,7 @@ h2 {
     grid-template-rows: 1fr;
     place-items: center;
     padding: 1.5rem;
-    padding-top: 2.21875rem;
+    padding-top: 3.71875rem;
 }
 
 
@@ -185,7 +196,7 @@ h2 {
     color: var(--clr-text-title);
 }
 
-@media (min-width: 28.125em) {
+@media (min-width: 29.125em) {
     :root {
         --fnt-size-lg: 1.75rem;
         --fnt-size-rg: 1rem;
