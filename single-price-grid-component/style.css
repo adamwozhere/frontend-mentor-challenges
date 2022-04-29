@@ -1,0 +1,225 @@
+/* RESET */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+h1, h2, p {
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* GLOBAL */
+:root {
+    --fnt-family-primary: 'Karla', sans-serif;
+    --fnt-weight-rg: 400;
+    --fnt-weight-bd: 800;
+    
+    --fnt-size-rg: 1rem;
+    --fnt-size-body: 0.85rem;
+    --fnt-size-title: 1.21875rem;
+    --fnt-size-subtitle: 1.09375rem;
+    --fnt-size-tagline: 0.90625rem;
+    --fnt-size-price: 1.9375rem;
+    --fnt-size-period: 1rem;
+    --fnt-size-info: 1rem;
+    --fnt-size-small: 0.85rem;
+
+    --line-height-body: 1.915;
+    --line-height-title: 1.35;
+
+    --clr-cyan: hsl(179, 62%, 43%);
+    --clr-cyan-light: hsl(179, 47%, 52%);
+    --clr-accent: hsl(71, 73%, 54%);
+    --clr-bg-neutral: hsl(204, 43%, 93%);
+    --clr-txt-dark: hsl(218, 22%, 67%);
+    --clr-txt-light: hsla(0, 0%, 100%, 0.6);
+    --clr-white: hsl(0, 0%, 100%);
+}
+
+body {
+    font-family: var(--fnt-family-primary);
+    font-size: var(--fnt-size-body);
+    font-weight: var(--fnt-weight-rg);
+    background-color: var(--clr-bg-neutral);
+    color: var(--clr-txt-dark);
+    line-height: var(--line-height-body);
+}
+
+h1, h2 {
+    line-height: var(--line-height-title);
+}
+
+h1 {
+    font-size: var(--fnt-size-title);
+    color: var(--clr-cyan);
+}
+
+h2 {
+    font-size: var(--fnt-size-subtitle);
+}
+
+
+/* composition */
+/* for component display only */
+.component-display {
+    display: grid;
+    grid-template-rows: 1fr;
+    place-items: center;
+    padding: 2rem;
+    padding-top: 4.13rem; /* offset footer */
+}
+
+
+/* utility */
+.flow > :where(:not(:first-child)) {
+    margin-top: var(--flow-space, 1.25em);
+}
+
+.container {
+    padding: 1.5rem;
+}
+
+
+/* block */
+.button {
+    --flow-space: 1.775em;
+    display: block;
+    padding: 0.54em 1.5em;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    text-align: center;
+    font-size: var(--fnt-size-rg);
+    color: var(--clr-white);
+    background-color: var(--clr-accent);
+    box-shadow: 0 0.5rem 0.75rem 0 hsla(0, 0%, 0%, .15);
+}
+.button:hover,
+.button:focus {
+    opacity: 0.8;
+}
+
+
+.price-card {
+    max-width: 24.375rem;
+    border-radius: 0.35rem;
+    overflow: hidden;
+    box-shadow: 0 2rem 3rem 0 hsla(218, 22%, 67%, 0.35);
+}
+
+.price-card .tagline {
+    --flow-space: 1.55em;
+    font-size: var(--fnt-size-tagline);
+    font-weight: var(--fnt-weight-bd);
+    line-height: var(--line-height-title);
+    color: var(--clr-accent);
+}
+
+
+.subscription {
+    --flow-space: 1.25em;
+    display: flex;
+    align-items: center;
+    line-height: 1.1;
+    gap: 1em;
+}
+.subscription__price {
+    font-size: var(--fnt-size-price);
+    font-weight: var(--fnt-weight-bd);
+}
+.subscription__period {
+    font-size: var(--fnt-size-rg);
+    color: var(--clr-txt-light);
+}
+
+.section-1 {
+    padding-top: 1.7rem;
+    padding-bottom: 1.92rem;
+    background-color: var(--clr-white);
+}
+
+.section-2 {
+    background-color: var(--clr-cyan);
+    color: var(--clr-white);
+}
+
+.section-2 .info {
+    font-size: var(--fnt-size-info);
+    line-height: var(--line-height-title);
+    --flow-space: 0.455em;
+   
+}
+
+.section-3 {
+    color: var(--clr-txt-light);
+    background-color: var(--clr-cyan-light);
+    line-height: 1.475;
+    font-size: var(--fnt-size-small);
+}
+
+.section-3 h2 {
+    color: var(--clr-white);
+}
+
+.attribution { 
+    padding-top: 1rem;
+    font-size: 0.6875rem;
+    text-align: center;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%);
+}
+.attribution a:hover {
+    text-decoration: none;
+}
+
+/* EXCEPTION */
+@media (min-width: 43em) {
+    :root {
+        --fnt-size-body: 0.975rem;
+        --fnt-size-tagline: 1.1rem; /* 17.6px */
+        --fnt-size-title: 1.46875rem; /* 23.5px */
+        --fnt-size-info: 0.975rem; /* 15.6px */
+
+        --line-height-body: 1.65;
+    }
+
+    .container {
+        padding: 2.48rem;
+    }
+
+    .price-card {
+        max-width: 39.75rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .section-1 {
+        --flow-space: 0.58em;
+        grid-column: span 2;
+    }
+
+    .price-card .tagline {
+        --flow-space: 1.2em;
+    }
+
+    .section-2 .info {
+        --flow-space: 0.55em;
+    }
+
+    .button {
+        --flow-space: 1.75em;
+        padding-block: 0.68em;
+    }
+}
+
