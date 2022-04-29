@@ -36,7 +36,7 @@ Users should be able to:
 
 ## My process
 
-I created this project mainly with CUBE css to work with the css cascade more naturally, but with a lot of the component compartmentilised as with BEM. I wanted to work more with CUBE css, but I found working with token based utility classes a bit more difficult with this project, as there seemed to be quite a varied (perhaps a bit unstructured) method to the spacings and font sizes in the design.
+I created this project mainly with CUBE css to work with the css cascade more naturally, but with a lot of the component compartmentalised as with BEM -- I wanted to work more with CUBE css, but I found working with token based utility classes a bit more difficult with this project, as there seemed to be quite a varied (perhaps a bit unstructured) method to the spacings and font sizes in the design.
 
 ### Built with
 
