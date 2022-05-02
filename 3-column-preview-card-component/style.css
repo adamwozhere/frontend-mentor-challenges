@@ -1,0 +1,182 @@
+/* reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+h1, h2, h3, p {
+    margin: 0;
+}
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* GLOBAL */
+:root {
+    --fnt-family-primary: 'Lexend Deca', sans-serif;
+    --fnt-family-secondary: 'Big Shoulders Display', cursive;
+
+    --fnt-size-body: 0.9375rem;
+    --fnt-size-title: 2.5rem;
+
+    --clr-orange: hsl(31, 77%, 52%);
+    --clr-cyan: hsl(184, 100%, 22%);
+    --clr-green: hsl(179, 100%, 13%);
+    --clr-neutral: hsl(0, 0%, 95%);
+    --clr-text-body: hsla(0, 0%, 100%, 0.75);
+}
+
+body {
+    font-family: var(--fnt-family-primary);
+    background-color: var(--clr-neutral);
+    color: var(--clr-text-body);
+    font-size: var(--fnt-size-body);
+    line-height: 1.67;
+}
+
+h1, h2, h3 {
+    font-family: var(--fnt-family-secondary);
+    color: var(--clr-neutral);
+    font-size: var(--fnt-size-title);
+    --flow-space: 0.65em;
+}
+
+
+/* COMPOSITION */
+.component-display {
+    display: grid;
+    grid-template-rows: 1fr;
+    align-items: center;
+    padding: 1.5rem;
+    padding-top: 3.65rem; /* offset footer */
+}
+
+/* switches between a horizontal and vertical layout without wrapping */
+.switch-stack {
+    /* var(--breakpoint): vertical/horizontal switch breakpoint */
+    /* var(--max-vertical-width): max-width when in vertical layout */
+    
+    margin-inline: auto;
+    max-width: 100%; /* prevent horizontal overflow */
+
+    /* limits widths for column and row layouts */
+    width:
+        clamp(
+            var(--max-width-column, 100%), /* min value */
+            (100% - var(--breakpoint, 40rem)) * 999, /* preferred value */
+            var(--max-width-row) /* maximum value */
+        ); 
+
+    /* displays only 3 in a row if enough space, otherwise in a column */
+    display: grid;
+    grid-template-columns: 
+        repeat(
+            auto-fit,
+            minmax(
+                clamp(
+                    33.333%, /* min value */
+                    (var(--breakpoint, 40rem) - 100%) * 999, /* preferred value */
+                    100% /* max value */
+                ),
+                1fr
+            )
+        );
+}
+
+
+/* UTILITY */
+.bg\:orange {
+    background-color: var(--clr-orange);
+}
+
+.bg\:cyan {
+    background-color: var(--clr-cyan);
+}
+
+.bg\:green {
+    background-color: var(--clr-green);
+}
+
+.flow > :where(:not(:first-child)) {
+    margin-top: var(--flow-space, 1em);
+}
+
+.repel\:bottom {
+    margin-bottom: auto;
+}
+
+.txt\:uppercase {
+    text-transform: uppercase;
+}
+
+
+/* BLOCK */
+.preview-card {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    
+    min-height: 31.2rem;
+    --breakpoint: 51.25rem;
+    --max-width-column: 26.25rem;
+    --max-width-row: 57.5rem;
+
+}
+
+.content {
+    padding: 3rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+}
+
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.2;
+    background-color: var(--clr-neutral);
+    padding: 1em 2.15em;
+    border-radius: 999px;
+    --flow-space: 1.65em;
+    transition: background-color 200ms ease;
+}
+.button:hover,
+.button:focus {
+    outline: 2px solid var(--clr-neutral);
+    outline-offset: -2px;
+    background-color: transparent;
+    color: var(--clr-neutral);
+}
+
+.attribution {
+    margin-top: 1rem;
+    font-size: 0.6875rem; text-align: center; 
+    color: grey;
+}
+.attribution a {
+    color: var(--clr-cyan);
+}
+.attribution a:hover,
+.attribution a:focus {
+    text-decoration: none;
+}
+
+
+/* EXCEPTION */
+/* wrapped in :where() to prevent overriding button hover white text */
+:where(.bg\:orange .button) {
+    color: var(--clr-orange);
+}
+
+:where(.bg\:cyan .button) {
+    color: var(--clr-cyan);
+}
+
+:where(.bg\:green .button) {
+    color: var(--clr-green);
+}

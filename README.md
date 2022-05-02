@@ -6,3 +6,4 @@ Repository for [Frontend Mentor](http://www.frontendmentor.com) challenge soluti
 - [order-summary-component](https://adamwozhere.github.io/frontend-mentor-challenges/order-summary-component/)
 - [stats-preview-card-component](https://adamwozhere.github.io/frontend-mentor-challenges/stats-preview-card-component/)
 - [single-price-grid-component](https://github.com/adamwozhere/frontend-mentor-challenges/tree/main/single-price-grid-component/)
+- [3-column-preview-card-component]([https://github.com/adamwozhere/frontend-mentor-challenges/tree/main/3-column-preview-card-component/)
