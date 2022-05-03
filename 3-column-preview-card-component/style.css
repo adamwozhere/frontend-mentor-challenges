@@ -52,7 +52,8 @@ h1, h2, h3 {
     grid-template-rows: 1fr;
     align-items: center;
     padding: 1.5rem;
-    padding-top: 4.9625rem; /* offset for footer and original design (design is lower than centre by 1.3125rem */
+    padding-top: 6.25rem; /* offset footer and off-centre design */
+
 }
 
 /* switches between a horizontal and vertical layout without wrapping */
