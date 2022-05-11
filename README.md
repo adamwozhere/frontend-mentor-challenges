@@ -8,3 +8,4 @@ Repository for [Frontend Mentor](http://www.frontendmentor.com) challenge soluti
 - [single-price-grid-component](https://github.com/adamwozhere/frontend-mentor-challenges/tree/main/single-price-grid-component/)
 - [3-column-preview-card-component](https://github.com/adamwozhere/frontend-mentor-challenges/tree/main/3-column-preview-card-component/)
 - [profile-card-component](https://github.com/adamwozhere/frontend-mentor-challenges/tree/main/profile-card-component/)
+- [faq-accordion-card](https://github.com/adamwozhere/frontend-mentor-challenges/tree/main/faq-accordion-card/)

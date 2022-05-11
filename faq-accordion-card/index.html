@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+</head>
+
+<body class="component-display">
+  <main>
+    <article class="faq-card">
+      <div class="faq-card__header">
+        <picture>
+          <source media="(min-width: 1000px)" srcset="images/illustration-woman-online-desktop.svg">
+          <source media="" srcset="images/illustration-woman-online-mobile.svg">
+          <img src="images/illustration-woman-online-mobile.svg" alt="Illustration of a woman online">
+        </picture>
+      </div>
+      <div class="faq-card__content flow">
+        <h1>FAQ</h1>
+        <div class="accordion flow" data-component="accordion">
+          <h2>How many team members can I invite?</h2>
+          <div>
+            <p>You can invite up to 2 additional users on the Free plan. There is no limit on
+              team members for the Premium plan.</p>
+          </div>
+          <h2>What is the maximum file upload size?</h2>
+          <div>
+            <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>
+          </div>
+          <h2>How do I reset my password?</h2>
+          <div>
+            <p>Click “Forgot password” from the login page or “Change password” from your profile page.
+              A reset link will be emailed to you.</p>
+          </div>
+          <h2>Can I cancel my subscription?</h2>
+          <div>
+            <p>Yes! Send us a message and we’ll process your request no questions asked.</p>
+          </div>
+          <h2>Do you provide additional support?</h2>
+          <div>
+            <p>Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="http://www.adamwozniak.uk">Adam Wozniak</a>.
+  </footer>
+
+  <script src="accordion.js"></script>
+</body>
+</html>
