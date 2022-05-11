@@ -51,7 +51,7 @@ Users should be able to:
 
 ### What I learned
 
-I originally looked into creating a css-only accordion using `<input type="checkbox">`'s but then came across some articles about accessibilty and decided on using javascript instead. Accessibilty, ARIA attributes etc. still confuse me sometimes but I tried to implement them to the best of my understanding. I also found Heydon Pickering's article about creating collapsible sections using 'Progressive Enhancement' very interesting, so I tried to implement this so that the accordion is still viewable without javascript.
+I originally looked into creating a css-only accordion using `<input type="checkbox">`'s but then came across some articles about accessibility and decided on using javascript instead. Accessibility, ARIA attributes etc. still confuse me sometimes but I tried to implement them to the best of my understanding. I also found Heydon Pickering's article about creating collapsible sections using 'Progressive Enhancement' very interesting, so I tried to implement this so that the accordion is still viewable without javascript.
 
 The basic html structure for the accordion is just `<h2>` tags with a corresponding `<div>` element containing the panel content:
 
@@ -101,7 +101,7 @@ In the future I would look more into accessibility, web components, and making j
 
 ### Useful resources
 
-- [Accessible accordion patterns](https://www.hassellinclusion.com/blog/accessible-accordion-pattern/) - General information about accordion accessibilty, and some links to some implementations below: (Scott O'Hara and Heydon Pickering)
+- [Accessible accordion patterns](https://www.hassellinclusion.com/blog/accessible-accordion-pattern/) - General information about accordion accessibility, and some links to some implementations below: (Scott O'Hara and Heydon Pickering)
 - [Accessible ARIA Accordions](https://www.scottohara.me/blog/2017/10/25/accordion-release.html) - Script source for accordions using ARIA properties (Scott O'Hara)
 - [Collapsible Sections](https://inclusive-components.design/collapsible-sections/) - Implementation options using progressive ehancement (Heydon Pickering)
 - [Accessible accordion component](https://barker.codes/blog/an-accessible-accordion-component) - This article perhaps helped with a lot of the code and and general understanding through the video guide in the article
