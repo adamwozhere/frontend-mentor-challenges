@@ -6,4 +6,7 @@ shareBtn.addEventListener('click', function() {
     let isExpanded = this.getAttribute('aria-expanded') == 'true';
     this.setAttribute('aria-expanded', !isExpanded);
     sharePanel.setAttribute('aria-hidden', isExpanded);
+    sharePanel.querySelectorAll('button').forEach( b => {
+        b.setAttribute('disabled', isExpanded);
+    });
 });
