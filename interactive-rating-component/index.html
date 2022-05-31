@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+  
+</head>
+<body class="component-display">
+  <main>
+    <article class="rating-card container">
+
+      <!-- Rating state start -->
+      <div id="rating-select" class="rating-card__main">
+        <form class="" id="rating-form" action="#" method="post">
+          <span class="[ star-icon ] [ circle ]" aria-hidden="true"><img src="images/icon-star.svg" alt=""></span>
+          <h1 class="heading">How did we do?</h1>
+          <p>Please let us know how we did with your support request. All feedback is appreciated 
+            to help us improve our offering!</p>
+
+          <strong class="alert" id="error-msg" role="alert" hidden>Select a rating from 1 to 5</strong>
+          <fieldset class="radio-buttons" role="radiogroup" aria-reqired="true">
+            <legend class="visually-hidden">Select a rating from 1 to 5:</legend>
+            <ol>
+              <li>
+                <input class="select-btn" type="radio" name="rating" value="1" id="rating-1">
+                <label class="circle" for="rating-1">1</label>
+              </li>
+              <li>
+                <input class="select-btn" type="radio" name="rating" value="2" id="rating-2">
+                <label class="circle" for="rating-2">2</label>
+              </li>
+              <li>
+                <input class="select-btn" type="radio" name="rating" value="3" id="rating-3">
+                <label class="circle" for="rating-3">3</label>
+              </li>
+              <li>
+                <input class="select-btn" type="radio" name="rating" value="4" id="rating-4">
+                <label class="circle" for="rating-4">4</label>
+              </li>
+              <li>
+                <input class="select-btn" type="radio" name="rating" value="5" id="rating-5">
+                <label class="circle" for="rating-5">5</label>
+              </li>
+            </ol>
+          </fieldset>
+          <button class="[ submit-btn ] [ pill ]" type="submit" data-close="true">Submit</button>
+        </form>
+      </div>
+       <!-- Rating state end -->
+
+      <!-- Thank you state start -->
+      <div id="rating-response" class="rating-card__response" hidden>
+        <div class="rating-card__media">
+          <img src="images/illustration-thank-you.svg" alt="">
+        </div>
+        <div class="[ rating-card__feedback ] [ pill ]">You selected <span id="rating-value"></span> out of 5</div>
+        <p class="heading">Thank you!</p>
+        <p>
+          We appreciate you taking the time to give a rating. If you ever need more support,
+          don’t hesitate to get in touch!
+        </p>
+      </div>
+      <!-- Thank you state end -->
+
+    </article>
+  </main>
+
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="http://www.adamwozniak.uk">Adam Wozniak</a>.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
