@@ -57,7 +57,7 @@ With this project I have tried to keep accessibility in mind; although I'm unsur
 ```html
 <strong class="alert" id="error-msg" role="alert" hidden>Select a rating from 1 to 5</strong>
 ```
-This seems like a sensibile solution as it means the error message is styled to match the card rather than being a browser-styled popup as with other form inputs / elements.
+This seems like a sensible solution as it means the error message is styled to match the card rather than being a browser-styled popup as with other form inputs / elements.
 
 ## Author
 
