@@ -13,6 +13,7 @@ This is a solution to the [Interactive rating component challenge on Frontend Me
   - [My process](#my-process)
     - [Built with](#built-with)
     - [What I learned](#what-i-learned)
+    - [Useful Resources](#useful-resources)
   - [Author](#author)
 
 
@@ -58,6 +59,10 @@ With this project I have tried to keep accessibility in mind; although I'm unsur
 <strong class="alert" id="error-msg" role="alert" hidden>Select a rating from 1 to 5</strong>
 ```
 This seems like a sensible solution as it means the error message is styled to match the card rather than being a browser-styled popup as with other form inputs / elements.
+
+### Useful Resources
+
+- [Accessible validation of checkbox and radiobutton groups](https://blog.tenon.io/accessible-validation-of-checkbox-and-radiobutton-groups/) - I will attempt to follow these best practices more closely in future projects
 
 ## Author
 
