@@ -1,0 +1,230 @@
+/* RESET */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* GLOBAL */
+:root {
+    --fnt-family-primary: 'Open Sans', sans-serif;
+    --fnt-family-heading: 'Poppins', sans-serif;
+    --fnt-weight-rg: 400;
+    --fnt-weight-sb: 600;
+
+    --clr-primary-light: hsl(300, 69%, 71%);
+    --clr-primary-medium: hsl(257, 40%, 49%);
+    --clr-neutral-white: hsl(0, 0%, 100%);
+}
+
+body {
+    background-color: var(--clr-primary-medium);
+    font-family: var(--fnt-family-primary);
+    font-weight: var(--fnt-weight-rg);
+    color: var(--clr-neutral-white);
+    font-size: 1rem;
+    line-height: 1.5;
+
+    background-image: url(images/bg-mobile.svg);
+    background-position: top center;
+    background-size: 100vw auto;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-family: var(--fnt-family-heading);
+    font-size: 1.475rem; /* 23.5px; */
+    line-height: 1.55;
+    max-width: 20ch;
+}
+
+p {
+    max-width: 50ch;
+}
+
+
+/* COMPOSITION */
+.site-container {
+    max-width: 100%;
+}
+
+.container {
+    margin-inline: auto;
+    padding-inline: 36.6px;
+    max-width: 27rem;
+}
+
+
+/* UTILITY */
+.button {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-family: var(--fnt-family-heading);
+    font-size: 0.76875rem; /* 12.3px; */
+    color: var(--clr-primary-medium);
+    background-color: var(--clr-neutral-white);
+    padding: 0.9em 6.15em;
+    border-radius: 100vw;
+    box-shadow: 0 5px 5px hsla(0, 0%, 0%, 0.25);
+
+    /* adjustments for font-face line box */
+    padding-top: 1em;
+    padding-bottom: 0.8em;
+}
+
+.button:hover,
+.button:focus {
+    color: var(--clr-neutral-white);
+    background-color: var(--clr-primary-light);
+}
+
+
+/* BLOCK */
+.site-head {
+    padding-top: 0.9375rem;
+    padding-bottom: 2.3125rem;
+}
+
+.site-head a svg { /* site logo */
+    width: 130px;
+}
+
+.main-content {
+    text-align: center;
+}
+
+.main-content > * {
+    margin-inline: auto;
+}
+
+.cta-content {
+    padding-block: 3.75rem;
+}
+
+.cta-content p {
+    margin-top: 0.75rem; /* 12px flow */
+}
+
+.cta-content .button {
+    margin-top: 1.5rem; /* 24px flow */
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 0.6em;
+    margin: 0;
+    padding-block: 4px;
+    margin-bottom: 2rem;
+}
+
+.icon-link {
+    --size: 28px;
+    color: var(--clr-neutral-white);
+}
+
+.icon-link:hover,
+.icon-link:focus {
+    color: var(--clr-primary-light);
+}
+
+.icon-link > svg {
+    color: currentColor;
+    width: var(--size, 1.5rem);
+    height: var(--size, 1.5rem);
+    border-radius: 50%;
+    border: 1px solid currentColor;
+    padding: 6px;
+    fill: currentColor;
+}
+
+/* EXCEPTION */
+@media (min-width: 48.125em) {
+    body {
+        font-size: 1.125rem; /* 18px */
+        background-image: url(images/bg-desktop.svg);
+        background-size: auto max(100%, 50rem);
+        background-position: top left;
+    }
+
+    .container {
+        padding-inline: 4.5625rem;
+        max-width: 90rem;
+    }
+
+    .site-head {
+        padding-top: 3rem;
+        padding-bottom: 4.5625rem;
+    }
+
+    .site-head a svg {
+        position: relative;
+        left: -3px;
+        width: 215px;
+    }
+
+    .main-content {
+        text-align: start;
+        display: grid;
+        grid-template-columns: auto min(33.25rem, 50%);
+        gap: 3.125rem;
+    }
+
+    .main-content > * {
+        margin-inline: 0;
+    }
+
+    .cta-content {
+        padding-top: 2.75rem;
+    }
+    
+    .cta-content h1 {
+        font-size: 2.46875rem; /* 39.5px */
+        line-height: 1.5;
+    }
+    
+    .cta-content p {
+        margin-top: 1.25rem; /* flow space */
+    }
+
+    .social-links {
+        justify-content: flex-end;
+        gap: 0.95em;
+        padding-top: 1.3125rem;
+        padding-right: 7px;
+    }
+    
+    .icon-link {
+        --size: 39px;
+    }
+    
+    .icon-link > svg {
+        padding: 9px;
+    }
+    
+    .button {
+        font-size: 1.125rem; /* 18px */
+        padding-inline: 3.5em;
+        padding-top: 0.8em;
+        box-shadow: 0 5px 10px 4px hsla(0, 0%, 0%, 0.25);
+    }
+}
