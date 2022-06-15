@@ -12,3 +12,4 @@ Repository for [Frontend Mentor](http://www.frontendmentor.com) challenge soluti
 - [article-preview-component](https://github.com/adamwozhere/frontend-mentor-challenges/tree/main/article-preview-component/)
 - [interactive-rating-component](https://github.com/adamwozhere/frontend-mentor-challenges/tree/main/interactive-rating-component/)
 - [huddle-landing-page](https://github.com/adamwozhere/frontend-mentor-challenges/tree/main/huddle-landing-page/)
+- [social-proof-section](https://github.com/adamwozhere/frontend-mentor-challenges/tree/main/social-proof-section/)

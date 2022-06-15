@@ -1,0 +1,271 @@
+/* RESET */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+
+/* GLOBAL */
+:root {
+    --fnt-family-primary: 'League Spartan', sans-serif;
+    --fnt-weight-rg: 400;
+    --fnt-weight-md: 500;
+    --fnt-weight-bd: 700;
+
+    --clr-primary-dark: hsl(300, 43%, 22%);
+    --clr-primary-soft: hsl(333, 80%, 67%);
+    --clr-neutral-white: hsl(0, 0%, 100%);
+    --clr-neutral-light: hsl(300, 24%, 96%);
+    --clr-neutral-dark: hsl(303, 10%, 53%);
+}
+
+body {
+    font-family: var(--fnt-family-primary);
+    font-weight: var(--fnt-weight-rg);
+    font-size: 1rem;
+    line-height: 1.375;
+    color: var(--clr-neutral-dark);
+    background-color: var(--clr-neutral-white);
+
+    background-image: url(images/bg-pattern-top-mobile.svg), url(images/bg-pattern-bottom-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top left, bottom center;
+    background-size: max(60%, 375px), 100%;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: var(--fnt-weight-bd);
+    color: var(--clr-primary-dark);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+blockquote, figure {
+    margin: 0;
+}
+
+
+/* COMPOSITION */
+.site-container {
+    width: min(30rem, 100vw - 3rem);
+    margin-inline: auto;
+    padding-block: 5.2rem;
+}
+
+
+
+/* UTILITY / TOKEN */
+.heading\:display {
+    max-width: 12ch;
+    letter-spacing: -0.03ch;
+    line-height: 0.8;
+    font-size: clamp(2.5rem, calc(2.5rem + ((1vw - 3.75px) * 4.2667)), 3.5rem);
+}
+
+/* ascent-override does not work in safari, so apply as a class to adjust line-box position */
+.text\:ascent-override {
+    position: relative;
+    bottom: var(--ascent-override, 0);
+}
+
+
+/* BLOCK */
+.intro {
+    text-align: center;
+    font-size: 1.1875rem; /* 19px */
+    line-height: 1.32;
+}
+
+.intro > * {
+    margin-inline: auto;
+}
+
+.intro p {
+    margin-top: 1.375rem; /* 22px */
+}
+
+
+/* ratings */
+.ratings {
+    font-weight: var(--fnt-weight-bd);
+    color: var(--clr-primary-dark);
+    text-align: center;
+    margin-top: 2.375rem; /* 38px */
+  
+}
+
+.ratings ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.rating {
+    --ascent-override: -0.8ex;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1em;
+    border-radius: 0.6rem;
+    font-weight: var(--fnt-weight-bd);
+    background-color: var(--clr-neutral-light);
+}
+
+.icon-stars {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+
+/* testimonials */
+.testimonials {
+    margin-block: 3.0625rem; /* 49px */
+}
+
+.testimonials ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.testimonial {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    padding: 2.5rem 2rem 1.9rem;
+    border-radius: 0.6rem;
+    color: var(--clr-neutral-light);
+    background-color: var(--clr-primary-dark);
+}
+
+.testimonial img {
+    order: -1;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+.testimonial figcaption {
+    /* adjust vertical align line-box */
+    --ascent-override: -0.35ex;
+    line-height: 1.25;
+    font-weight: var(--fnt-weight-bd);
+    color: var(--clr-neutral-white);
+}
+
+.testimonial figcaption span {
+    display: block;
+    font-weight: var(--fnt-weight-rg);
+    color: var(--clr-primary-soft);
+}
+
+.testimonial blockquote {
+    margin-top: 0.375rem;
+}
+
+
+/* EXCEPTION */
+@media (min-width: 60em) {
+    body {
+        background-image: url(images/bg-pattern-top-desktop.svg), url(images/bg-pattern-bottom-desktop.svg);
+        background-position: top left, bottom right;
+        background-size: 41%, 82%;
+    }
+
+    .heading\:display {
+        font-size: 3.5rem; /* 56px */
+        line-height: 0.85;
+        letter-spacing: -0.05ch;
+    } 
+
+    .site-container {
+        width: min(69.375rem, 100vw - 3rem);
+        padding-block: 7.4375rem; /* 119px */
+    }
+
+    .main-content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .main-content > * {
+        flex: 50%;
+    }
+
+    .intro {
+        text-align: start;
+    }
+
+    .intro > * {
+        margin-inline: 0;
+    }
+    
+    .intro p {
+        max-width: 40ch;
+        margin-top: 1.625rem; /* 26px */
+        letter-spacing: -0.04ch;
+    }
+
+    .ratings {
+        margin-top: 1.625rem; /* 26px */
+    }
+
+    .ratings ul {
+        gap: 1rem;
+        margin-inline-start: auto;
+    }
+
+    .rating {
+        --ascent-override: -0.2ex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 1.06rem 2rem;
+        gap: 2rem;
+        max-width: 27.8rem;
+        margin-inline-start: auto;
+        transform: translateX(calc(var(--index) * -2.9375rem));
+    }
+
+    .testimonials {
+        flex: 100%; /* full width section */
+        margin-block: 4.4375rem;
+    }
+
+    .testimonials ul {
+        flex-direction: row;
+        align-items: stretch; /* keep equal height */
+        gap: 1.9rem;
+    }
+
+    .testimonials li {
+        flex: 1 1 0; /* keep equal columns */
+    }
+
+    .testimonial {
+        padding-bottom: 2.35rem;
+        height: 100%; /* keep equal height */
+        transform: translateY(calc(var(--index) * 1rem));
+    }
+}
