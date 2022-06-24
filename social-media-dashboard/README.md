@@ -48,9 +48,9 @@ Users should be able to:
 
 ### What I learned
 
-This project provided more of a challenge with learning javascript and also CSS grid. I found some of the styling particulary difficult as there are a lot of changes to colours between the light and dark mode - I need to improve my token-naming conventions to make code cleaner and more understandable. While functional; the theme toggle defaults to light - in the future I'd like to implement it so that it defaults to system default or a setting saved to local storage if the site has been visited before.
+This project provided more of a challenge with learning javascript and also CSS grid. I found some of the styling particularly difficult as there are a lot of changes to colours between the light and dark mode - I need to improve my token-naming conventions to make code cleaner and more understandable. While functional; the theme toggle defaults to light - in the future I'd like to implement it so that it defaults to system default or a setting saved to local storage if the site has been visited before.
 
-I attempted to implement accessibilty with visually hidden titles and a focus state to the toggle switch, however; I think a better approach may be to hide the majority of the page and provide all the information as a table for screen-readers only.
+I attempted to implement accessibility with visually hidden titles and a focus state to the toggle switch, however; I think a better approach may be to hide the majority of the page and provide all the information as a table for screen-readers only.
 
 ### Useful resources
 
