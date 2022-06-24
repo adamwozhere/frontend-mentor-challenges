@@ -394,7 +394,7 @@ span[data-toggle="switch checked"]::before {
     }
 
     .theme-toggle {
-        padding: 0.625rem;
+        padding: 0.625rem 0 0;
         margin: 0;
         border: 0;
         align-self: flex-start;
