@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Social Media Dashboard</title>
+
+</head>
+<body data-theme="light">
+  <div class="site-wrapper">
+    <header class="header container">
+      <div class="header__inner flow">
+        <h1>Social Media Dashboard</h1>
+        <span>Total Followers: 23,004</span>
+      </div>
+    
+      <div class="theme-toggle">
+        <button class="theme-toggle__button" type="button" id="toggle-1" role="switch" aria-label="toggle dark mode" aria-checked="false" data-toggle="button"></button>
+        <label for="toggle-1" data-toggle="label"><span data-toggle="switch"></span></label>
+        <span class="theme-toggle__text" aria-hidden="true">Dark Mode</span>
+      </div>
+    </header>
+    <main class="container">
+      <article class="overview-totals flow">
+        <h2 class="visually-hidden">Overview - Totals</h2>
+        <div class="auto-grid">
+          <div class="tile" data-featured="facebook">
+            <h3 class="visually-hidden">Facebook</h3>
+            <span class="username"><img src="images/icon-facebook.svg" alt="" class="icon">@nathanf</span>
+            <span class="stat-number">1987</span>
+            <span class="stat-type">Followers</span>
+            <span class="stat-difference" data-difference="increase" aria-label="+12 followers today">12 Today</span>
+          </div>
+          <div class="tile" data-featured="twitter">
+            <h3 class="visually-hidden">Twitter</h3>
+            <span class="username"><img src="images/icon-twitter.svg" alt="" class="icon">@nathanf</span>
+            <span class="stat-number">1044</span>
+            <span class="stat-type">Followers</span>
+            <span class="stat-difference" data-difference="increase" aria-label="+99 followers today">99 Today</span>
+          </div>
+          <div class="tile" data-featured="instagram">
+            <h3 class="visually-hidden">Instagram</h3>
+            <span class="username"><img src="images/icon-instagram.svg" alt="" class="icon">@realnathanf</span>
+            <span class="stat-number">11k</span>
+            <span class="stat-type">Followers</span>
+            <span class="stat-difference" data-difference="increase" aria-label="+1099 followers today">1099 Today</span>
+          </div>
+          <div class="tile" data-featured="youtube">
+            <h3 class="visually-hidden">YouTube</h3>
+            <span class="username"><img src="images/icon-youtube.svg" alt="" class="icon">Nathan F.</span>
+            <span class="stat-number">8239</span>
+            <span class="stat-type">Subscribers</span>
+            <span class="stat-difference" data-difference="decrease" aria-label="-144 subscribers today">144 Today</span>
+          </div>
+        </div>
+      </article>
+      <article class="overview-today flow">
+        <h2>Overview - Today</h2>
+        <div class="auto-grid">
+          <div class="tile">
+            <h3 class="visually-hidden">Facebook</h3>
+            <div class="row">
+              <span class="stat-type">Page Views</span>
+              <img src="images/icon-facebook.svg" alt="" class="icon">
+            </div>
+            <div class="row">
+              <span class="stat-number">87</span>
+              <span class="stat-difference" data-difference="increase" aria-label="+3% today">3%</span>
+            </div>
+          </div>
+          <div class="tile">
+            <h3 class="visually-hidden">Facebook</h3>
+            <div class="row">
+              <span class="stat-type">Likes</span>
+              <img src="images/icon-facebook.svg" alt="" class="icon">
+            </div>
+            <div class="row">
+              <span class="stat-number">52</span>
+              <span class="stat-difference" data-difference="decrease" aria-label="-2% today">2%</span>
+            </div>
+          </div>
+          <div class="tile">
+            <h3 class="visually-hidden">Instagram</h3>
+            <div class="row">
+              <span class="stat-type">Likes</span>
+              <img src="images/icon-instagram.svg" alt="" class="icon">
+            </div>
+            <div class="row">
+              <span class="stat-number">5462</span>
+              <span class="stat-difference" data-difference="increase" aria-label="+2257% today">257%</span>
+            </div>
+          </div>
+          <div class="tile">
+            <h3 class="visually-hidden">Instagram</h3>
+            <div class="row">
+              <span class="stat-type">Profile Views</span>
+              <img src="images/icon-instagram.svg" alt="" class="icon">
+            </div>
+            <div class="row">
+              <span class="stat-number">52k</span>
+              <span class="stat-difference" data-difference="increase" aria-label="+1375% today">1375%</span>
+            </div>
+          </div>
+          <div class="tile">
+            <h3 class="visually-hidden">Twitter</h3>
+            <div class="row">
+              <span class="stat-type">Retweets</span>
+              <img src="images/icon-twitter.svg" alt="" class="icon">
+            </div>
+            <div class="row">
+              <span class="stat-number">117</span>
+              <span class="stat-difference" data-difference="increase" aria-label="+303% today">303%</span>
+            </div>
+          </div>
+          <div class="tile">
+            <h3 class="visually-hidden">Twitter</h3>
+            <div class="row">
+              <span class="stat-type">Likes</span>
+              <img src="images/icon-twitter.svg" alt="" class="icon">
+            </div>
+            <div class="row">
+              <span class="stat-number">507</span>
+              <span class="stat-difference" data-difference="increase" aria-label="+553% today">553%</span>
+            </div>
+          </div>
+          <div class="tile">
+            <h3 class="visually-hidden">YouTube</h3>
+            <div class="row">
+              <span class="stat-type">Likes</span>
+              <img src="images/icon-youtube.svg" alt="" class="icon">
+            </div>
+            <div class="row">
+              <span class="stat-number">107</span>
+              <span class="stat-difference" data-difference="decrease" aria-label="-19% today">19%</span>
+            </div>
+          </div>
+          <div class="tile">
+            <h3 class="visually-hidden">YouTube</h3>
+            <div class="row">
+              <span class="stat-type">Total Views</span>
+              <img src="images/icon-youtube.svg" alt="" class="icon">
+            </div>
+            <div class="row">
+              <span class="stat-number">1407</span>
+              <span class="stat-difference" data-difference="decrease" aria-label="-12% today">12%</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    
+    </main>
+  </div>
+  
+  <script src="app.js"></script>
+</body>
+</html>
