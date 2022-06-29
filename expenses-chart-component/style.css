@@ -1,0 +1,321 @@
+/* RESET */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* GLOBAL */
+:root {
+    --fnt-family-primary: 'DM Sans', sans-serif;
+    --fnt-size-rg: 18px;
+    --fnt-weight-rg: 400;
+    --fnt-weight-bd: 700;
+
+    --clr-primary-red: hsl(10, 79%, 65%);
+    --clr-primary-red-tint: hsl(10, 97%, 77%);
+    --clr-primary-cyan: hsl(186, 34%, 60%);
+    --clr-primary-cyan-tint: hsl(186, 47%, 80%);
+    --clr-neutral-dark-brown: hsl(25, 47%, 15%);
+    --clr-neutral-medium-brown: hsl(28, 10%, 53%);
+    --clr-neutral-cream: hsl(27, 66%, 92%);
+    --clr-neutral-pale-orange: hsl(33, 100%, 98%);
+}
+
+body {
+    font-family: var(--fnt-family-primary);
+    font-size: var(--fnt-size-rg);
+    font-weight: var(--fnt-weight-rg);
+    background-color: var(--clr-neutral-cream);
+    color: var(--clr-neutral-dark-brown);
+    line-height: 1.5;
+    /* center vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* UTILITY */
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.col > span {
+    display: block;
+}
+
+.container {
+    --max-width: 23rem;
+    width: min(var(--max-width), 100% - 2rem);
+    margin-inline: auto;
+}
+
+
+/* BLOCK */
+/* header section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.2rem;
+    padding-right: 1.5rem;
+    border-radius: 10px;
+    color: var(--clr-neutral-cream);
+    background-color: var(--clr-primary-red);
+    font-size: 0.9375rem; /* 15px; */
+}
+
+.header__logo img {
+    height: 40px;
+}
+
+.header__balance {
+    font-weight: var(--fnt-weight-bd);
+    color: var(--clr-neutral-pale-orange);
+    font-size: 1.5rem; /* 24px; */
+}
+
+/* main content section */
+.content {
+    padding: 1.25rem 1.1rem 1.25rem;
+    margin-top: 1rem;
+    border-radius: 10px;
+    background-color: var(--clr-neutral-pale-orange);
+}
+
+.content__summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 1.3rem 0 0.15rem;
+    font-size: 0.953125rem; /* 15.25px; */
+    color: var(--clr-neutral-medium-brown);
+    border-top: 2px solid var(--clr-neutral-cream);
+}
+
+
+.spending__total {
+    font-size: 1.875rem; /* 30px; */
+    font-weight: var(--fnt-weight-bd);
+    color: var(--clr-neutral-dark-brown);
+}
+
+.spending__percent {
+    font-weight: var(--fnt-weight-bd);
+    color: var(--clr-neutral-dark-brown);
+    display: block;
+    text-align: end;
+    
+}
+
+
+/* graph */
+.graph {
+    width: 100%;
+    margin-bottom: 3.063rem;
+}
+
+.graph caption {
+    display: block;
+    text-align: start;
+    font-weight: var(--fnt-weight-bd);
+    font-size: 1.5rem; /* 24px; */
+}
+.graph thead {
+    display: none;
+}
+
+.graph tbody {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    height: 150px;
+    width: 100%;
+    margin-top: 3.0625rem;
+}
+
+.graph tbody tr {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    width: 100%;
+    max-width: 50px;
+}
+
+.graph tbody tr th {
+    position: absolute;
+    bottom: -1.85rem;
+    left: 0;
+    right: 0;
+    font-size: 0.75rem; /* 12px; */
+    font-weight: var(--fnt-weight-rg);
+    color: var(--clr-neutral-medium-brown);
+}
+
+.graph tbody tr td {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: calc(100% * var(--size));
+    border-radius: 4px;
+    background-color: var(--clr-primary-red);
+    cursor: pointer;
+    transition: color 100ms ease-in-out;
+    animation: grow-bars 500ms ease;
+}
+
+
+/* extend hover section of bar to cover gap to the tooltip */
+.graph tbody tr td::before {
+    content: '';
+    width: 100%;
+    height: 10px;
+    background-color: transparent;
+    position: absolute;
+    top: -8px;
+}
+
+.graph tbody tr td span {
+    position: absolute;
+    top: -2.6rem;
+    padding: 0.7em 0.5em 0.62em;
+    z-index: 1;
+    font-size: 0.953125rem; /* 15.25px; */
+    line-height: 1;
+    text-align: center;
+    background-color: var(--clr-neutral-dark-brown);
+    font-weight: var(--fnt-weight-bd);
+    color: var(--clr-neutral-pale-orange);
+    border-radius: 6px;
+    /* hidden by default */
+    opacity: 0;
+    clip: rect(0 0 0 0);
+    transform: translateY(10px);
+    width: 1px;
+    height: 1px;
+    transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.graph tbody tr td:hover span {
+    opacity: 1;
+    transform: translateY(0);
+    width: auto;
+    height: auto;
+    clip: initial;
+}
+
+.graph tbody tr td:hover {
+    background-color: var(--clr-primary-red-tint); 
+}
+
+
+/* EXCEPTION */
+.graph td[data-highlight-today] {
+    background-color: var(--clr-primary-cyan);
+}
+
+.graph td[data-highlight-today]:hover {
+    background-color: var(--clr-primary-cyan-tint);
+}
+
+@keyframes grow-bars {
+    0% { height: 0; }
+    100% { height: calc(100% * var(--size)); }
+}
+
+/* desktop */
+@media (min-width: 38em) {
+    .container {
+        --max-width: 33.125rem;
+    }
+    .header {
+        padding: 1.625rem 2.3rem 1.34rem 2rem;
+        font-size: var(--fnt-size-rg);
+        border-radius: 1.2rem;
+        line-height: 1.58;
+    }
+
+    .header__logo img {
+        height: 48px;
+    }
+
+    .header__balance {
+        font-size: 1.96875rem; /* 31.5px; */
+    }
+
+    .content {
+        margin-top: 1.5rem;
+        padding: 1.75rem 2.33rem 2.5rem;
+        border-radius: 18px;
+    }
+
+    .content__summary {
+        font-size: var(--fnt-size-rg);
+        padding-top: 1.9375rem;
+        padding-bottom: 0.5rem;
+        line-height: 1.35;
+    }
+
+    .spending__total {
+        margin-top: 0.5rem;
+        font-size: 3rem;
+        line-height: 1;
+    }
+
+    .graph {
+        margin-bottom: 3.625rem;
+    }
+
+    .graph caption {
+        font-size: 1.96875rem; /* 31.5px; */
+    }
+    
+    .graph tbody {
+        margin-top: 3.921875rem;
+
+    }
+
+    .graph tbody tr {
+        max-width: 50px;
+    }
+
+    .graph tbody tr th {
+        font-size: 15.25px;
+        bottom: -1.95rem;
+    }
+
+    .graph tbody tr td {
+        border-radius: 6px;
+    }
+
+    .graph tbody tr td span {
+        font-size: var(--fnt-size-rg);
+        top: -3rem;
+        border-radius: 5px;
+        padding-block: 0.62em;
+    } 
+}

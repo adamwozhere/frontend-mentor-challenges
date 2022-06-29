@@ -14,3 +14,4 @@ Repository for [Frontend Mentor](http://www.frontendmentor.com) challenge soluti
 - [huddle-landing-page](https://github.com/adamwozhere/frontend-mentor-challenges/tree/main/huddle-landing-page/)
 - [social-proof-section](https://github.com/adamwozhere/frontend-mentor-challenges/tree/main/social-proof-section/)
 - [social-media-dashboard](https://github.com/adamwozhere/frontend-mentor-challenges/tree/main/social-media-dashboard/)
+- [expenses-chart-component](https://github.com/adamwozhere/frontend-mentor-challenges/tree/main/expenses-chart-component/)
