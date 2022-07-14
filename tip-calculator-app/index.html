@@ -25,7 +25,7 @@
         <form class="form flow" action="#">
           <div class="form__inner flow">
             <div class="control">
-              <div class="row"><label for="bill-input">Bill</label><span class="error-message" aria-live="true"></span></div>
+              <div class="row"><label for="bill-input">Bill</label><span class="error-message" aria-live="polite"></span></div>
               <input type="text" id="bill-input" placeholder="0.00" data-icon="currency" autocomplete="off">
             </div>
             <fieldset class="form__tip">
@@ -52,13 +52,13 @@
                   <label for="tip-select-5">50%</label>
                 </div>
                 <div>
-                  <input type="radio" name="tip" id="tip-select-custom" value="custom" aria-hidden="true">
+                  <input type="radio" name="tip" id="tip-select-custom" value="custom" aria-hidden="true" tabindex="-1">
                   <input id="custom-tip-input" name="tip" class="test-input" type="text" placeholder="Custom" autocomplete="off">
                 </div>
               </div>
             </fieldset>
             <div class="control">
-              <div class="row"><label for="persons-input">Number of People</label><span class="error-message" aria-live="true"></span></div>
+              <div class="row"><label for="persons-input">Number of People</label><span class="error-message" aria-live="polite"></span></div>
               <input type="text" id="persons-input" placeholder="0" data-icon="person" autocomplete="off">
             </div>
           </div>
@@ -69,14 +69,14 @@
                 <span>Tip Amount</span>
                 <span class="text-small">/ person</span>
               </div>
-              <span class="text-total" id="calculated-tip">$0.00</span>
+              <span class="text-total" id="calculated-tip" aria-live="polite">$0.00</span>
             </div>
             <div class="row">
               <div class="col">
                 <span>Total</span>
                 <span class="text-small">/ person</span>
               </div>
-              <span class="text-total" id="calculated-total">$0.00</span>
+              <span class="text-total" id="calculated-total" aria-live="polite">$0.00</span>
             </div>
             <button id="reset-btn" disabled>Reset</button>
           </div>
