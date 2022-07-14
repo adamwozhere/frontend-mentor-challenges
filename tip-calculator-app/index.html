@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Frontend Mentor | Tip calculator app</title>
+
+</head>
+<body>
+  <main>
+    <div class="container">
+      <div class="header">
+        <h1 class="visually-hidden">Bill Splitter - tip calculator</h1>
+        <img src="images/logo.svg" alt="">
+      </div>
+      
+      <div class="card">
+        <form class="form flow" action="#">
+          <div class="form__inner flow">
+            <div class="control">
+              <div class="row"><label for="bill-input">Bill</label><span class="error-message" aria-live="true"></span></div>
+              <input type="text" id="bill-input" placeholder="0.00" data-icon="currency" autocomplete="off">
+            </div>
+            <fieldset class="form__tip">
+              <legend>Select Tip %</legend>
+              <div class="auto-grid">
+                <div>
+                  <input type="radio" name="tip" id="tip-select-1" value="5">
+                  <label for="tip-select-1">5%</label>
+                </div>
+                <div>
+                  <input type="radio" name="tip" id="tip-select-2" value="10">
+                  <label for="tip-select-2">10%</label>
+                </div>
+                <div>
+                  <input type="radio" name="tip" id="tip-select-3" value="15">
+                  <label for="tip-select-3">15%</label>
+                </div>
+                <div>
+                  <input type="radio" name="tip" id="tip-select-4" value="25">
+                  <label for="tip-select-4">25%</label>
+                </div>
+                <div>
+                  <input type="radio" name="tip" id="tip-select-5" value="50">
+                  <label for="tip-select-5">50%</label>
+                </div>
+                <div>
+                  <input type="radio" name="tip" id="tip-select-custom" value="custom" aria-hidden="true">
+                  <input id="custom-tip-input" name="tip" class="test-input" type="text" placeholder="Custom" autocomplete="off">
+                </div>
+              </div>
+            </fieldset>
+            <div class="control">
+              <div class="row"><label for="persons-input">Number of People</label><span class="error-message" aria-live="true"></span></div>
+              <input type="text" id="persons-input" placeholder="0" data-icon="person" autocomplete="off">
+            </div>
+          </div>
+      
+          <div class="form__totals flow">
+            <div class="row">
+              <div class="col">
+                <span>Tip Amount</span>
+                <span class="text-small">/ person</span>
+              </div>
+              <span class="text-total" id="calculated-tip">$0.00</span>
+            </div>
+            <div class="row">
+              <div class="col">
+                <span>Total</span>
+                <span class="text-small">/ person</span>
+              </div>
+              <span class="text-total" id="calculated-total">$0.00</span>
+            </div>
+            <button id="reset-btn" disabled>Reset</button>
+          </div>
+      
+        </form>
+      </div>
+    </div>
+  </main>
+  
+  <script src="app.js"></script>
+</body>
+</html>
