@@ -1,0 +1,16 @@
+
+
+:root {
+    --fnt-family-primary: 'Epilogue', sans-serif;
+    --fnt-weight-md: 500;
+    --fnt-weight-bd: 700;
+    --fnt-size-rg: 18px;
+
+    --clr-almost-white: hsl(0, 0%, 98%);
+    --clr-medium-gray: hsl(0, 0%, 41%);
+    --clr-almost-black: hsl(0, 0%, 8%);
+}
+
+body {
+    font-family: var(--fnt-family-primary);
+}

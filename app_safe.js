@@ -7,10 +7,6 @@ const calcTip = form.querySelector('#calculated-tip');
 const calcTotal = form.querySelector('#calculated-total');
 const resetBtn = form.querySelector('#reset-btn');
 
-let billInputOldValue;
-let customTipInputOldValue;
-let personsInputOldValue;
-
 // currency formatter
 const currency = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
@@ -21,14 +17,24 @@ form.addEventListener('submit', (e) => {
 });
 
 // number input handlers
-form.addEventListener('input', (e) => {
-    if (e.target === billInput) {
+/*form.addEventListener('keydown', (e) => {
+    if (!e.target.matches('input[type="text"]'))
+        return;
+    
+    e.preventDefault();
+    if (e.target === billInput){
         handleNumericInput(e, formatCurrency);
     } else if (e.target === customTipInput) {
         handleNumericInput(e, formatPercentage);
     } else if (e.target === personsInput) {
         handleNumericInput(e, formatInteger);
-    }
+    } 
+}); */
+
+billInput.addEventListener('input', (e) => {
+    e.preventDefault();
+    console.log('input: ' + billInput.value);
+    console.log('event: ' + e.target);
 });
 
 // hide caret on mousedown to prevent it blinking into end position
@@ -85,13 +91,21 @@ form.addEventListener('click', (e) => {
 function handleNumericInput(e, mask) {
     // strip non-digits to get unmasked value
     let n = getRawIntegerValue(e.target.value);
-
+    // add key if number, delete last number if backspace, otherwise do nothing
+    if (!isNaN(e.key)) {
+        n += e.key;
+    } else if (e.key === 'Backspace') {
+        n = n.slice(0, -1);
+    } else {
+        return;
+    }
     // validate input
+    console.log(n);
     n = validateInput(e.target, n);
-
+    console.log(n);
     // set input value to masked value
     e.target.value = mask(n);
-
+    console.log(e.target.value);
     // set cursor to end (only needed for percentage sign?)
     setCursor(e);
     calculateBill();
