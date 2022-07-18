@@ -16,6 +16,7 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
       - [Currency (Bill) Input](#currency-bill-input)
       - [Integer (Number of Persons) Input](#integer-number-of-persons-input)
       - [Percentage (Custom tip) Input](#percentage-custom-tip-input)
+    - [Useful Resources](#useful-resources)
   - [Author](#author)
 
 ## Overview
@@ -78,6 +79,10 @@ The same as the integer input, except:
 - number limited to `0 - 100`
 - if the input is selected but left blank, it will format to `0%` on losing focus
 - if the input is set to `0%` then re-selected, it is formatted back to `%` so the user does not have to delete the leading `0` before entering a new value
+
+### Useful Resources ###
+
+- [GOV.UK Design System - Numeric Inputs](https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/) - This was very helpful in implementing input accessibility for mobile devices
   
 ## Author
 

@@ -7,10 +7,6 @@ const calcTip = form.querySelector('#calculated-tip');
 const calcTotal = form.querySelector('#calculated-total');
 const resetBtn = form.querySelector('#reset-btn');
 
-let billInputOldValue;
-let customTipInputOldValue;
-let personsInputOldValue;
-
 // currency formatter
 const currency = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
@@ -31,19 +27,37 @@ form.addEventListener('input', (e) => {
     }
 });
 
-// hide caret on mousedown to prevent it blinking into end position
 form.addEventListener('mousedown', (e) => {
-    if (!e.target.matches('input[type="text"]'))
-        return;
-
-    e.target.style.caretColor = 'transparent';
+    // prevent '0' from flashing in custom percent input if mouse is down on button-type inputs
+    if (e.target.matches('.form__tip label') || e.target === resetBtn) {
+        console.log('radio down: ' + e.target);
+        customTipInput.preventDefault = true;
+    }
+    
+    // hide caret on mousedown to prevent it blinking to end position
+    if (e.target.matches('input[type="text"]')) {
+        e.target.style.caretColor = 'transparent';
+    }
 });
 
 form.addEventListener('mouseup', (e) => {
-    if (!e.target.matches('input[type="text"]'))
-        return;
-    
-    e.target.style.caretColor = 'hsl(172, 67%, 45%)';
+    if (e.target.matches('input[type="text"]')) {
+        // set caret back to primary cyan colour
+        e.target.style.caretColor = 'hsl(172, 67%, 45%)';
+    }
+
+    // allow blur event to fire again - to prevent bugs
+    customTipInput.preventDefault = false; 
+});
+
+customTipInput.addEventListener('blur', (e) => {
+    console.log('blur: ' + form.tip.value);
+    if (customTipInput.preventDefault) {
+        customTipInput.preventDefault = false;
+
+    } else if (customTipInput.value === '%') {
+        customTipInput.value = '0%';
+    }
 });
 
 // Main click event handler
@@ -67,13 +81,8 @@ form.addEventListener('click', (e) => {
     } else if (e.target.matches('#reset-btn')) {
         resetForm();
         return;
-    // any other click event
-    } else {
-        // effectively blur custom tip input -- fix: add to window listener instead?
-        if (customTipInput.value === '%') {
-            customTipInput.value = '0%';
-        }
-    }
+    }  
+
     // if text imput type, reset cursor
     if (e.target.matches('input[type="text"]')) {
         setCursor(e);
